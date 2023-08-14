@@ -46,4 +46,6 @@
 	{:else}
 		<h2>Loading...</h2>
 	{/if}
+
+	<Button title={'toggle lifecycle log'} on:click={() => isLoaded = !isLoaded} />
 </div>
