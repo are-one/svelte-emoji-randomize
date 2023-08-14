@@ -2,6 +2,7 @@
 	import EmojiDisplay from "./EmojiDisplay.svelte";
 	import EmojiDescription from "./EmojiDescription.svelte";
 	import Button from "./Button.svelte";
+	import { fade, fly} from "svelte/transition";
 
 	let isLoaded = false;
 	let currentEmoji = '😁';
@@ -40,9 +41,11 @@
 	<p>The mouse position: {m.x} x {m.y}</p>
 	<h1>Randomize Emoji</h1>
 	{#if isLoaded === true}
+	<div in:fly={{x: 200, duration: 2000}} out:fade>
 		<EmojiDisplay {currentEmoji} />
 		<EmojiDescription />
 		<Button on:click={handleRandomButton} title={'🔁 Randomize'}/>
+	</div>
 	{:else}
 		<h2>Loading...</h2>
 	{/if}
