@@ -15,18 +15,28 @@
 </script>
 
 <style>
+ button {
+	background-color: #8bd3dd;
+	padding: 0.75em;
+	border-radius: 0.25em;
+	border: 2px solid #000;
+	box-shadow: 0.4rem 0.4rem 0 #222;
+ }
+
+ button:hover {
+	box-shadow: 0.25rem 0.25rem 0 #222;
+	transition: all 0.4s ease 0s;
+	background-color: #8bd;
+ }
+
  div {
 	margin: 2em;
  }
 </style>
 
-<svelte:head>
-	<link rel="stylesheet" href="/terminal.min.css" />
-</svelte:head>
-
-<div class="container">
+<div>
 	<h1>Randomize Emoji</h1>
 	<EmojiDisplay {currentEmoji} />
 	<EmojiDescription />
-	<button class="btn btn-primary" on:click={handleRandomButton}>🔁 Randomize</button>
+	<button on:click={handleRandomButton}>🔁 Randomize</button>
 </div>
